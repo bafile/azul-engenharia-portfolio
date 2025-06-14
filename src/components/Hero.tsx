@@ -11,7 +11,7 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Soluções em
-                <span className="text-blue-600 block">Engenharia Mecânica</span>
+                <span className="text-blue-800 block">Engenharia Mecânica</span>
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Desenvolvemos projetos mecânicos inovadores com precisão técnica e 
@@ -21,7 +21,7 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white group">
+              <Button size="lg" className="bg-blue-800 hover:bg-blue-900 text-white group">
                 Ver Portfólio
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -37,22 +37,22 @@ const Hero = () => {
 
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">50+</div>
+                <div className="text-2xl font-bold text-blue-800">50+</div>
                 <div className="text-sm text-gray-600">Projetos Concluídos</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">5+</div>
+                <div className="text-2xl font-bold text-blue-800">5+</div>
                 <div className="text-sm text-gray-600">Anos de Experiência</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">100%</div>
+                <div className="text-2xl font-bold text-blue-800">100%</div>
                 <div className="text-sm text-gray-600">Satisfação</div>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-4 shadow-2xl">
+            <div className="relative bg-gradient-to-r from-blue-800 to-blue-900 rounded-2xl p-4 shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Engenharia Mecânica - Engrenagens e Projetos Técnicos"

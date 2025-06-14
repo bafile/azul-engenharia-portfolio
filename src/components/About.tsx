@@ -55,7 +55,7 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {qualifications.map((qualification, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <div className="w-2 h-2 bg-blue-800 rounded-full"></div>
                     <span className="text-sm text-gray-600">{qualification}</span>
                   </div>
                 ))}
@@ -73,10 +73,10 @@ const About = () => {
                   const IconComponent = stat.icon;
                   return (
                     <div key={index} className="text-center">
-                      <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <div className="w-16 h-16 bg-blue-800 rounded-full flex items-center justify-center mx-auto mb-3">
                         <IconComponent className="h-8 w-8 text-white" />
                       </div>
-                      <div className="text-2xl font-bold text-blue-600 mb-1">
+                      <div className="text-2xl font-bold text-blue-800 mb-1">
                         {stat.value}
                       </div>
                       <div className="text-sm text-gray-600">
@@ -96,7 +96,7 @@ const About = () => {
                 e o futuro das empresas."
               </blockquote>
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-blue-800 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold">EP</span>
                 </div>
                 <div>

@@ -33,7 +33,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-blue-800 transition-colors duration-200 font-medium"
               >
                 {item.name}
               </a>
@@ -42,7 +42,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex flex-1 justify-end">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="bg-blue-800 hover:bg-blue-900 text-white">
               Solicitar Orçamento
             </Button>
           </div>
@@ -68,13 +68,13 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 py-2 px-4 rounded transition-colors"
+                  className="text-gray-700 hover:text-blue-800 py-2 px-4 rounded transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white mx-4 mt-4">
+              <Button className="bg-blue-800 hover:bg-blue-900 text-white mx-4 mt-4">
                 Solicitar Orçamento
               </Button>
             </nav>

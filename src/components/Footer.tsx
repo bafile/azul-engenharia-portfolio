@@ -25,11 +25,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
-              <div className="bg-blue-600 p-2 rounded-lg">
+              <div className="bg-blue-800 p-2 rounded-lg">
                 <Wrench className="h-6 w-6 text-white" />
               </div>
               <span className="text-xl font-bold">
-                EngMech<span className="text-blue-400">Pro</span>
+                EngMech<span className="text-blue-300">Pro</span>
               </span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -37,13 +37,13 @@ const Footer = () => {
               em realidade com precisão técnica e qualidade excepcional.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
@@ -57,7 +57,7 @@ const Footer = () => {
                 <li key={index}>
                   <a 
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors text-sm"
+                    className="text-gray-300 hover:text-blue-300 transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -85,15 +85,15 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Contato</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-blue-400" />
+                <Phone className="h-4 w-4 text-blue-300" />
                 <span className="text-gray-300 text-sm">+55 (11) 99999-9999</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-blue-400" />
+                <Mail className="h-4 w-4 text-blue-300" />
                 <span className="text-gray-300 text-sm">contato@engmechpro.com.br</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-blue-400" />
+                <MapPin className="h-4 w-4 text-blue-300" />
                 <span className="text-gray-300 text-sm">São Paulo, SP - Brasil</span>
               </div>
             </div>
@@ -106,10 +106,10 @@ const Footer = () => {
               © 2024 EngMechPro. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition-colors">
+              <a href="#" className="text-gray-400 hover:text-blue-300 text-sm transition-colors">
                 Política de Privacidade
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition-colors">
+              <a href="#" className="text-gray-400 hover:text-blue-300 text-sm transition-colors">
                 Termos de Uso
               </a>
             </div>

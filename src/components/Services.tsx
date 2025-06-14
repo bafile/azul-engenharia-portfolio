@@ -59,12 +59,12 @@ const Services = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-blue-300">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-blue-800">
                 <CardHeader className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors duration-300">
-                    <IconComponent className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-800 transition-colors duration-300">
+                    <IconComponent className="h-8 w-8 text-blue-800 group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <CardTitle className="text-xl text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <CardTitle className="text-xl text-gray-900 group-hover:text-blue-800 transition-colors">
                     {service.title}
                   </CardTitle>
                   <CardDescription className="text-gray-600">
@@ -75,7 +75,7 @@ const Services = () => {
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-blue-800 rounded-full mr-3"></div>
                         {feature}
                       </li>
                     ))}

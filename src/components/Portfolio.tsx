@@ -84,7 +84,7 @@ const Portfolio = () => {
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  <span className="bg-blue-800 text-white px-3 py-1 rounded-full text-xs font-medium">
                     {project.category}
                   </span>
                 </div>
@@ -97,7 +97,7 @@ const Portfolio = () => {
                     {project.date}
                   </div>
                 </div>
-                <CardTitle className="text-lg group-hover:text-blue-600 transition-colors">
+                <CardTitle className="text-lg group-hover:text-blue-800 transition-colors">
                   {project.title}
                 </CardTitle>
                 <CardDescription className="text-gray-600">
@@ -127,7 +127,7 @@ const Portfolio = () => {
                 
                 <Button 
                   variant="outline" 
-                  className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors"
+                  className="w-full group-hover:bg-blue-800 group-hover:text-white group-hover:border-blue-800 transition-colors"
                 >
                   Ver Detalhes
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -138,7 +138,7 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+          <Button size="lg" className="bg-blue-800 hover:bg-blue-900 text-white">
             Ver Todos os Projetos
           </Button>
         </div>
