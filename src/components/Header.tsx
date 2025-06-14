@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Menu, X, Wrench } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -19,13 +19,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="bg-blue-600 p-2 rounded-lg">
-              <Wrench className="h-6 w-6 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gray-800">
-              EngMech<span className="text-blue-600">Pro</span>
-            </span>
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/ae417f58-5c54-4921-b106-66fc726a6f19.png" 
+              alt="HLB Engenharia" 
+              className="h-12 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
