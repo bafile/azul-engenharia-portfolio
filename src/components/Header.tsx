@@ -23,7 +23,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/ae417f58-5c54-4921-b106-66fc726a6f19.png" 
               alt="HLB Engenharia" 
-              className="h-12 w-auto"
+              className="h-20 w-auto"
             />
           </div>
 
