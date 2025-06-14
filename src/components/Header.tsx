@@ -17,13 +17,13 @@ const Header = () => {
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
             <img 
               src="/lovable-uploads/ae417f58-5c54-4921-b106-66fc726a6f19.png" 
               alt="HLB Engenharia" 
-              className="h-20 w-auto"
+              className="h-16 w-auto"
             />
           </div>
 
