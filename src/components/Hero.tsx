@@ -54,17 +54,17 @@ const Hero = () => {
           <div className="relative">
             <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-4 shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Engenharia Mecânica - Componentes e Circuitos"
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Engenharia Mecânica - Robótica e Automação Industrial"
                 className="w-full h-80 object-cover rounded-lg"
               />
               <div className="absolute top-8 right-8 bg-green-400 w-3 h-3 rounded-full animate-pulse"></div>
               <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg p-4">
                 <div className="text-sm font-semibold text-gray-900 mb-1">
-                  Precisão em Cada Detalhe
+                  Inovação em Automação
                 </div>
                 <div className="text-xs text-gray-600">
-                  Tecnologia avançada aplicada em projetos de engenharia mecânica
+                  Soluções robotizadas e sistemas automatizados para a indústria
                 </div>
               </div>
             </div>
