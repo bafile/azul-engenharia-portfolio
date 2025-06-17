@@ -1,4 +1,3 @@
-
 import { ExternalLink, Calendar } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,7 @@ const Portfolio = () => {
       title: "Sistema de Transporte Automatizado",
       category: "Automação Industrial",
       description: "Desenvolvimento de esteira transportadora automatizada para linha de produção automotiva.",
-      image: "/api/placeholder/400/250",
+      image: "/lovable-uploads/173574f3-9f41-4063-8263-d82475f3241b.png",
       date: "2024",
       technologies: ["SolidWorks", "CLP Siemens", "Pneumática"],
       results: "40% aumento na produtividade"
