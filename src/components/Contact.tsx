@@ -1,11 +1,23 @@
-
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    nome: "",
+    empresa: "",
+    email: "",
+    telefone: "",
+    tipoDrawing: "",
+    mensagem: ""
+  });
+
   const contactInfo = [
     {
       icon: Phone,
@@ -32,6 +44,75 @@ const Contact = () => {
       link: "#"
     }
   ];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validação básica
+    if (!formData.nome || !formData.email || !formData.mensagem) {
+      toast({
+        title: "Campos obrigatórios",
+        description: "Por favor, preencha todos os campos obrigatórios.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Validação de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Email inválido",
+        description: "Por favor, insira um email válido.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Simular envio do formulário
+      console.log("Dados do formulário:", formData);
+      
+      // Aqui você pode integrar com um serviço de envio de email
+      // Por exemplo: EmailJS, Formspree, ou uma API própria
+      
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Simular delay
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Sua solicitação foi enviada com sucesso. Responderemos em até 24 horas.",
+      });
+
+      // Limpar formulário
+      setFormData({
+        nome: "",
+        empresa: "",
+        email: "",
+        telefone: "",
+        tipoDrawing: "",
+        mensagem: ""
+      });
+
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar",
+        description: "Ocorreu um erro ao enviar sua mensagem. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contato" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
@@ -114,70 +195,115 @@ const Contact = () => {
                 Envie sua Mensagem
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 sm:space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Nome *
+                    </label>
+                    <Input 
+                      name="nome"
+                      value={formData.nome}
+                      onChange={handleInputChange}
+                      placeholder="Seu nome completo" 
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Empresa
+                    </label>
+                    <Input 
+                      name="empresa"
+                      value={formData.empresa}
+                      onChange={handleInputChange}
+                      placeholder="Nome da empresa" 
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      E-mail *
+                    </label>
+                    <Input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="seu@email.com" 
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Telefone
+                    </label>
+                    <Input 
+                      name="telefone"
+                      value={formData.telefone}
+                      onChange={handleInputChange}
+                      placeholder="(11) 99999-9999" 
+                    />
+                  </div>
+                </div>
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Nome *
+                    Tipo de Desenho
                   </label>
-                  <Input placeholder="Seu nome completo" />
+                  <select 
+                    name="tipoDrawing"
+                    value={formData.tipoDrawing}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                  >
+                    <option value="">Selecione um tipo</option>
+                    <option value="planta-baixa">Planta Baixa</option>
+                    <option value="desenho-tecnico">Desenho Técnico</option>
+                    <option value="layout-industrial">Layout Industrial</option>
+                    <option value="detalhamento-mecanico">Detalhamento Mecânico</option>
+                    <option value="diagrama-eletrico">Diagrama Elétrico</option>
+                    <option value="outros">Outros</option>
+                  </select>
                 </div>
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Empresa
+                    Mensagem *
                   </label>
-                  <Input placeholder="Nome da empresa" />
+                  <Textarea 
+                    name="mensagem"
+                    value={formData.mensagem}
+                    onChange={handleInputChange}
+                    placeholder="Descreva seu projeto ou necessidade..."
+                    rows={4}
+                    className="resize-none"
+                    required
+                  />
                 </div>
-              </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    E-mail *
-                  </label>
-                  <Input type="email" placeholder="seu@email.com" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Telefone
-                  </label>
-                  <Input placeholder="(11) 99999-9999" />
-                </div>
-              </div>
+                <Button 
+                  type="submit" 
+                  className="w-full bg-blue-800 hover:bg-blue-900 text-white group"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    "Enviando..."
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      Enviar Mensagem
+                    </>
+                  )}
+                </Button>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Tipo de Projeto
-                </label>
-                <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
-                  <option value="">Selecione um tipo</option>
-                  <option value="projeto">Projeto Mecânico</option>
-                  <option value="automacao">Automação Industrial</option>
-                  <option value="consultoria">Consultoria Técnica</option>
-                  <option value="prototipo">Prototipagem</option>
-                  <option value="outros">Outros</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Mensagem *
-                </label>
-                <Textarea 
-                  placeholder="Descreva seu projeto ou necessidade..."
-                  rows={4}
-                  className="resize-none"
-                />
-              </div>
-
-              <Button className="w-full bg-blue-800 hover:bg-blue-900 text-white group">
-                <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                Enviar Mensagem
-              </Button>
-
-              <p className="text-xs text-gray-500 text-center">
-                * Campos obrigatórios. Responderemos em até 24 horas.
-              </p>
+                <p className="text-xs text-gray-500 text-center">
+                  * Campos obrigatórios. Responderemos em até 24 horas.
+                </p>
+              </form>
             </CardContent>
           </Card>
         </div>
